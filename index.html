@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description"
+    content="No salão bahia, renovamos seu visual, seja um corte de cabelo masculino ou corte feminino simples, ou até, uma coloração, luzes, entre outros…" />
+  <meta name="keywords"
+    content="salão de cabelo, corte de cabelo, salão masculino, salão feminino, coloração, salão em aguas lindas, cabeleireiro, beleza, barbearia, sobrancelha" />
+  <meta name="author" content="Desenvolvido por Hugo Deleon para Salão Bahia" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sevillana&family=Cinzel+Decorative:wght@400;700&family=Oswald:wght@300;400;500&family=Montserrat:wght@300;400;500&family=Rubik:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Salão Bahia</title>
+</head>
+
+<body>
+  <header class="header">
+    <section>
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#galeria">Nossa Galeria</a>
+        <a href="#servicos">Nossos Serviços</a>
+        <a href="#profissionais">Nossos Profissionais</a>
+        <a href="#endereco">Endereço</a>
+        <a href="#agendarhorario">Agendar Horário</a>
+      </nav>
+    </section>
+  </header>
+
+  <div class="home-container">
+    <section id="home" class="home">
+      <div class="home__overlay"></div>
+
+      <div class="home__content">
+        <h1 class="home__title">SALÃO BAHIA</h1>
+        <p class="home__subtitle">Tradição reconhecida por mais de 3 mil clientes</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="sobre" id="sobre">
+    <h2 class="title">Sobre <span>nós</span></h2>
+
+    <div class="sobre__card">
+      <div class="sobre__row">
+        <div class="sobre__image">
+          <img src="./assets/images/Imgsobrenos.png" alt="Logo do Salão Bahia" />
+        </div>
+
+        <div class="sobre__content">
+          <h3 class="sobre__cardTitle">Por que escolher o Salão Bahia?</h3>
+          <p class="sobre__text">
+            Desde 1995, definimos o padrão de estética feminina e masculina em Águas Lindas de Goiás. Como um dos
+            pioneiros salões da cidade, construímos um legado de sofisticação que atravessa gerações. Nossa trajetória é
+            marcada pela solidez de uma empresa que soube se reinventar sem perder a essência do salão clássica.
+          </p>
+          <p class="sobre__text">
+            Trabalhamos com profissionais apaixonados pelo que fazem, garantindo que você se sinta em casa desde o
+            primeiro minuto. Entendemos suas necessidades e cuidamos do seu visual com o carinho e a atenção que você
+            merece. Venha viver a melhor experiência de barbearia da região.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="galeria" id="galeria">
+    <h2 class="title">Nossa <span>Galeria</span></h2>
+
+    <div class="galeria__card">
+      <div class="galeria__row">
+        <div class="galeria__grid">
+          <a class="galeria__item galeria__item--square" href="#"><img src="./assets/images/ft1carrosel.jpeg"
+              aria-label="Foto 1"></a>
+          <a class="galeria__item galeria__item--square" href="#"><img src="./assets/images/ft8carrosel.jpeg"
+              aria-label="Foto 1"></a>
+          <a class="galeria__item galeria__item--square" href="#"><img src="./assets/images/ft1carrosel.jpeg"
+              aria-label="Foto 1"></a>
+          <a class="galeria__item galeria__item--square" href="#"><img src="./assets/images/ft4carrosel.jpeg"
+              aria-label="Foto 1"></a>
+        </div>
+
+        <div class="galeria__destaques">
+          <h3 class="galeria__destaquesTitle">DESTAQUES</h3>
+          <a class="galeria__item galeria__item--tall" href="#"><img src="./assets/images/Luzes (Feminino).jpeg"
+              aria-label="Destaque"></a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="profissionais" id="profissionais">
+    <h2 class="title">Nossos <span>Profissionais</span></h2>
+    <div class="box-container">
+      <div class="box">
+        <h3>Cabeleireiro</h3>
+        <h4>(Masculino e Feminino)</h4>
+        <img src="./assets/images/usuario.jpeg" alt="Profissional" />
+        <h5>Aldair Fernandes</h5>
+        <button class="info" onclick="showModal('modalAldair')">
+          Saiba Mais
+        </button>
+        <div class="modal" id="modalAldair">
+          <div class="modal-content">
+            <span class="close-button" onclick="closeModal('modalAldair')">&times;</span>
+            <img id="modalimg" src="./assets/images/usuario.jpeg" alt="Profissional" />
+            <h1>Aldair Fernandes</h1>
+            <p>
+              Especialista em cortes masculinos e femininos, formado na
+              Embelleze e com mais de 20 anos trabalhando na área, tendo total
+              capacidade para lhe entregar o resultado que você espera.
+            </p>
+          </div>
+          <div class="footer">Footer</div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3>Cabeleireiro</h3>
+        <h4>(Masculino)</h4>
+        <img src="./assets/images/usuario.jpeg" alt="Profissional" />
+        <h5>Josemir Fernandes</h5>
+        <button class="info" onclick="showModal('modalJosemir')">
+          Saiba Mais
+        </button>
+        <div class="modal" id="modalJosemir">
+          <div class="modal-content">
+            <span class="close-button" onclick="closeModal('modalJosemir')">&times;</span>
+            <img id="modalimg" src="./assets/images/usuario.jpeg" alt="Profissional" />
+            <h1>Josemir Fernandes</h1>
+            <p>
+              Especialista em cortes masculinos. Com mais de 15 anos de
+              experiência, Josemir traz um estilo moderno e inovador para seus
+              cortes.
+            </p>
+          </div>
+          <div class="footer">Footer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="serviços" id="servicos">
+    <h2 class="title">Nossos <span>Serviços</span></h2>
+    <div id="planes">
+      <img src="./assets/images/masculino.jpeg" alt="Tesoura" />
+      <h4>Corte masculino &rarr; R$ 25,00</h4>
+    </div>
+
+    <div id="planes">
+      <img src="./assets/images/Platinado.jpeg" alt="maquina" />
+      <h4>Platinado masculino &rarr; a partir de R$ 100,00</h4>
+    </div>
+
+    <div id="planes">
+      <img src="./assets/images/Feminino.jpeg" alt="corte feminino" />
+      <h4>Corte Feminino &rarr; a partir de R$ 30,00</h4>
+    </div>
+
+    <div id="planes">
+      <img src="./assets/images/Luzes (Feminino).jpeg" alt="luzes" />
+      <h4>Luzes (Feminino) &rarr; a partir de R$ 90,00</h4>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <h2 class="title">Nosso <span>Endereço</span></h2>
+      <div id="endereco">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2283.376731976964!2d-48.27346988955189!3d-15.74232262983267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bb90023757335%3A0x4ce3b92b56d56df0!2sSal%C3%A3o%20Bahia!5e0!3m2!1spt-BR!2sbr!4v1724153889307!5m2!1spt-BR!2sbr"
+          width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="horarios" id="horarios">
+    <h2 class="title">Horários <span>de </span>Funcionamento</h2>
+    <div id="horas">
+      <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col">De Segunda à sexta</th>
+            <th scope="col">Sábados e domingos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">07h00 às 19h00</th>
+            <td>07h00 às 13h00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="footer" id="agendarhorario">
+    <div class="share">
+      <h3 class="title">Agende <span>seu </span>horário:</h3>
+      <a href="https://wa.me/5561998291047?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Salão%20Bahia."
+        target="_blank">
+        <img width="80" height="80" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1" />
+      </a>
+    </div>
+  </section>
+</body>
+<script src="./assets/javascript/script.js"></script>
+
+</html>
