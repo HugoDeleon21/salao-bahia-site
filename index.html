@@ -81,11 +81,11 @@
           <a class="galeria__item galeria__item--square" href="#"><img src="./assets/images/ft1carrosel.jpeg"
               aria-label="Foto 1"></a>
           <a class="galeria__item galeria__item--square" href="#"><img src="./assets/images/ft8carrosel.jpeg"
-              aria-label="Foto 1"></a>
+              aria-label="Foto 2"></a>
           <a class="galeria__item galeria__item--square" href="#"><img src="./assets/images/ft3carrosel.jpeg"
-              aria-label="Foto 1"></a>
+              aria-label="Foto 3"></a>
           <a class="galeria__item galeria__item--square" href="#"><img src="./assets/images/ft4carrosel.jpeg"
-              aria-label="Foto 1"></a>
+              aria-label="Foto 4"></a>
         </div>
 
         <div class="galeria__destaques">
@@ -106,7 +106,7 @@
 
         <div class="servicos__col">
           <article class="servicos__item">
-            <img src="./assets/images/cabeloF.png" alt="Corte masculino">
+            <img src="./assets/images/masculino.jpeg" alt="Corte masculino">
             <h3 class="servicos__name">Cabelo Masculino</h3>
             <a class="servicos__btn" href="#agendarhorario">Fazer agendamento</a>
           </article>
@@ -124,7 +124,7 @@
 
         <div class="servicos__col">
           <article class="servicos__item">
-            <img src="./assets/images/Feminino.jpeg" alt="Corte feminino">
+            <img src="./assets/images/Unha.jpeg" alt="Corte feminino">
             <h3 class="servicos__name">Nail Design</h3>
             <a class="servicos__btn" href="#agendarhorario">Fazer agendamento</a>
           </article>
@@ -141,84 +141,95 @@
 
   <section class="profissionais" id="profissionais">
     <h2 class="title">Nossos <span>Profissionais</span></h2>
-    <div class="box-container">
-      <div class="box">
-        <h3>Cabeleireiro</h3>
-        <h4>(Masculino e Feminino)</h4>
-        <img src="./assets/images/usuario.jpeg" alt="Profissional" />
-        <h5>Aldair Fernandes</h5>
-        <button class="info" onclick="showModal('modalAldair')">
-          Saiba Mais
-        </button>
-        <div class="modal" id="modalAldair">
-          <div class="modal-content">
-            <span class="close-button" onclick="closeModal('modalAldair')">&times;</span>
-            <img id="modalimg" src="./assets/images/usuario.jpeg" alt="Profissional" />
-            <h1>Aldair Fernandes</h1>
-            <p>
-              Especialista em cortes masculinos e femininos, formado na
-              Embelleze e com mais de 20 anos trabalhando na área, tendo total
-              capacidade para lhe entregar o resultado que você espera.
-            </p>
-          </div>
-          <div class="footer">Footer</div>
-        </div>
-      </div>
 
-      <div class="box">
-        <h3>Cabeleireiro</h3>
-        <h4>(Masculino)</h4>
-        <img src="./assets/images/usuario.jpeg" alt="Profissional" />
-        <h5>Josemir Fernandes</h5>
-        <button class="info" onclick="showModal('modalJosemir')">
-          Saiba Mais
-        </button>
-        <div class="modal" id="modalJosemir">
-          <div class="modal-content">
-            <span class="close-button" onclick="closeModal('modalJosemir')">&times;</span>
-            <img id="modalimg" src="./assets/images/usuario.jpeg" alt="Profissional" />
-            <h1>Josemir Fernandes</h1>
-            <p>
-              Especialista em cortes masculinos. Com mais de 15 anos de
-              experiência, Josemir traz um estilo moderno e inovador para seus
-              cortes.
-            </p>
+    <div class="profissionais__card">
+      <div class="profissionais__grid">
+
+        <article class="profissionais__item">
+          <div class="profissionais__photo">
+            <img src="./assets/images/usuario.jpeg" alt="Aldair Fernandes">
           </div>
-          <div class="footer">Footer</div>
-        </div>
+
+          <h3 class="profissionais__name">Aldair Fernandes</h3>
+          <p class="profissionais__role">Cabeleireiro</p>
+          <p class="profissionais__text">
+            Especialista em cortes masculinos e femininos, com ampla experiência e foco em acabamento, desde
+            cortes degradê masculino, até progressiva em cabelo feminino. Especialista em tintura, luzes, e etc.
+          </p>
+
+          <a class="profissionais__btn" href="#agendarhorario">Agendar</a>
+        </article>
+
+        <article class="profissionais__item">
+          <div class="profissionais__photo">
+            <img src="./assets/images/usuario.jpeg" alt="Josemir Fernandes">
+          </div>
+
+          <h3 class="profissionais__name">Josemir Fernandes</h3>
+          <p class="profissionais__role">Cabeleireiro</p>
+          <p class="profissionais__text">
+            Especializado em cortes masculinos modernos, navalhado e degradê, barba, sobrancelha (na navalha), com
+            atenção total aos detalhes, sempre
+            buscando o melhor resultado e acabamento para o cliente.
+          </p>
+
+          <a class="profissionais__btn" href="#agendarhorario">Agendar</a>
+        </article>
+
+        <article class="profissionais__item">
+          <div class="profissionais__photo">
+            <img src="./assets/images/usuario.jpeg" alt="Profissional 3">
+          </div>
+
+          <h3 class="profissionais__name">Júlia Gabrielly</h3>
+          <p class="profissionais__role">Nail Designer</p>
+          <p class="profissionais__text">
+            Profissional especializada em manicure e pedicure, desde unhas naturais até serviços
+            mais especializados, como por exemplo:<br>Alongamento, banho de gel, blindagem, spa dos pés.
+          </p>
+
+          <a class="profissionais__btn" href="#agendarhorario">Agendar</a>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <section>
-    <div>
-      <h2 class="title">Nosso <span>Endereço</span></h2>
-      <div id="endereco">
+  <section class="endereco" id="endereco">
+    <h2 class="title">Nosso <span>Endereço</span></h2>
+
+    <div class="endereco__card">
+      <div class="endereco__map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2283.376731976964!2d-48.27346988955189!3d-15.74232262983267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bb90023757335%3A0x4ce3b92b56d56df0!2sSal%C3%A3o%20Bahia!5e0!3m2!1spt-BR!2sbr!4v1724153889307!5m2!1spt-BR!2sbr"
-          width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
   </section>
 
   <section class="horarios" id="horarios">
-    <h2 class="title">Horários <span>de </span>Funcionamento</h2>
-    <div id="horas">
-      <table class="table table-hover table-dark">
-        <thead>
-          <tr>
-            <th scope="col">De Segunda à sexta</th>
-            <th scope="col">Sábados e domingos</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">07h00 às 19h00</th>
-            <td>07h00 às 13h00</td>
-          </tr>
-        </tbody>
-      </table>
+    <h2 class="title">Horários <span>de</span> Funcionamento</h2>
+
+    <div class="horarios__card">
+      <div class="horarios__grid">
+
+        <article class="horarios__item">
+          <h3 class="horarios__day">Segunda à Sábado</h3>
+          <p class="horarios__time">07:00 às 19:00</p>
+        </article>
+
+        <article class="horarios__item">
+          <h3 class="horarios__day">Domingo</h3>
+          <p class="horarios__time">07:00 às 13:00</p>
+        </article>
+
+        <article class="horarios__item">
+          <h3 class="horarios__day">Feriados</h3>
+          <p class="horarios__time">07:00 às 13:00</p>
+        </article>
+
+      </div>
     </div>
   </section>
 
