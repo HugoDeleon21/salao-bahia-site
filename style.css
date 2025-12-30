@@ -1,5 +1,6 @@
 :root {
   --main-color: #d72323;
+  --blue-color: #3d6cb9;
   --black: #13131a;
   --bg: #010103;
   --border: 0.1rem solid rgba(255, 255, 255, 0.3);
@@ -74,8 +75,8 @@ section {
 }
 
 .navbar a{
-  font-family: var(--font-header);
-  font-size: 2.3rem;
+  font-family: var(--font-title);
+  font-size: 1.6rem;
   color: rgba(255,255,255,0.85);
   text-decoration: none;
   padding: 6px 8px;
@@ -88,8 +89,12 @@ section {
 
 }
 
+/* FIM DO HEADER */
+
+/* INICIO DA SEÇÃO HOME */
+
 .home-container{
-  margin-top: 80px; 
+  margin-top: 75px; 
   background: url("./assets/images/Fundosalao.jpeg") center/cover no-repeat;
 }
 
@@ -122,15 +127,17 @@ section {
   font-size: 6rem;  
   letter-spacing: 2px;
   margin-bottom: 10px;
-  text-shadow: 0 4px 18px rgba(0,0,0,0.7);
+  text-shadow:
+  0 6px 16px rgba(0,0,0,0.95),
+  0 12px 32px rgba(0,0,0,1);
 }
 
 .home__subtitle{
   color: rgba(255,255,255,0.90);
-  font-family: var(--font-text);
-  font-size: 3.5rem;
-  font-weight: 300;
-  text-shadow: 0 4px 14px rgba(0,0,0,0.7);
+  font-family: var(--font-title);
+  font-size: 3rem;
+  font-weight: 450;
+  text-shadow: 0 4px 14px rgba(0,0,0,0.95);
 }
 
 .title {
@@ -142,11 +149,19 @@ section {
   margin-bottom: 2rem;
 }
 
+/* FIM DA SEÇÃO HOME */
+
+/* PADRÃO DO SPAN DOS TITULOS */
+
 .title span {
   font-family: var(--font-title);
-  color: #3d6cb9;
+  color: var(--blue-color);
   text-transform: uppercase;
 }
+
+/* FIM DO PADRÃO DO SPAN DOS TITULOS */
+
+/* INICIO DA SEÇÃO SOBRE */
 
 .sobre{
   padding-top: 36px;
@@ -200,6 +215,10 @@ section {
   line-height: 1.7;
   margin-top: 10px;
 }
+
+/* FIM DA SEÇÃO SOBRE */
+
+/* INICIO DA SEÇÃO GALERIA */
 
 .galeria{
   padding-top: 36px;
@@ -274,7 +293,7 @@ section {
 
 .galeria__destaquesTitle{
   text-align: center;
-  font-weight: 550;
+  font-weight: 600;
   font-family: var(--font-title); 
   color: rgba(255,255,255,0.92);
   letter-spacing: 1px;
@@ -298,7 +317,10 @@ section {
   display: block;
 }
 
-/* ==== INICIO SEÇÃO SERVIÇOS ==== */
+/* FIM DA SEÇÃO GALERIA */
+
+/* INÍCIO DA SEÇÃO SERVIÇOS */
+
 .servicos{
   padding-top: 36px;
 }
@@ -325,6 +347,7 @@ section {
 }
 
 .servicos__item{
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.10);
@@ -333,21 +356,39 @@ section {
 
 .servicos__item img{
   width: 100%;
-  height: 220px;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.servicos__item::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.75)
+  );
+  z-index: 2;
+  pointer-events: none;
 }
 
 .servicos__name{
-  font-family: var(--font-services); /* Rubik */
+  position: relative;
+  z-index: 3;
+  font-family: var(--font-services);
   color: rgba(255,255,255,0.92);
   font-size: 1.8rem;
   text-align: center;
   margin: 12px 0 10px;
 }
 
-/* botão */
 .servicos__btn{
+  position: relative;
+  z-index: 3;
   display: block;
   width: fit-content;
   margin: 0 auto 14px;
@@ -359,13 +400,13 @@ section {
   text-transform: uppercase;
 
   color: #fff;
-  border: 1px solid #3d6cb9;
+  border: 1px solid var(--blue-color);
   border-radius: 10px;
   text-decoration: none;
 }
 
 .servicos__btn:hover{
-  background: #3d6cb9;
+  background: var(--blue-color);
 }
 
 .servicos__divider{
@@ -377,15 +418,16 @@ section {
 }
 
 .servicos__divider img{
-  width:215px;
+  width: 215px;
   max-height: 80%;
   object-fit: contain;
   opacity: 0.95;
 }
 
-/* ==== FIM SEÇÃO SERVIÇOS ====  */
+/* FIM DA SEÇÃO SERVIÇOS */
 
-/* ====== PROFISSIONAIS ====== */
+/* INICIO SEÇÃO PROFISSIONAIS */
+
 .profissionais{
   padding-top: 36px;
 }
@@ -394,7 +436,7 @@ section {
   font-family: var(--font-title); 
 }
 
-/* card grande */
+/* card grande para caber os cards menores */
 .profissionais__card{
   background: linear-gradient(180deg, rgba(20,22,30,0.88), rgba(10,10,14,0.70));
   border: 1px solid rgba(255,255,255,0.08);
@@ -422,10 +464,9 @@ section {
   text-align: center;
 }
 
-/* foto */
 .profissionais__photo{
-  width: 86px;
-  height: 86px;
+  width: 100px;
+  height: 100px;
   margin: 6px auto 12px;
   border-radius: 50%;
   overflow: hidden;
@@ -439,7 +480,6 @@ section {
   display: block;
 }
 
-/* nome (Oswald) */
 .profissionais__name{
   font-family: var(--font-card-title); /* Oswald */
   color: rgba(255,255,255,0.92);
@@ -447,7 +487,6 @@ section {
   margin-bottom: 6px;
 }
 
-/* cargo (Montserrat) */
 .profissionais__role{
   font-family: var(--font-card-text); /* Montserrat */
   color: rgba(255,255,255,0.75);
@@ -455,7 +494,6 @@ section {
   margin-bottom: 10px;
 }
 
-/* texto (Montserrat) */
 .profissionais__text{
   font-family: var(--font-card-text); /* Montserrat */
   color: rgba(255,255,255,0.72);
@@ -464,14 +502,13 @@ section {
   margin-bottom: 14px;
 }
 
-/* botão */
 .profissionais__btn{
   display: inline-block;
   padding: 10px 16px;
   border-radius: 10px;
   text-decoration: none;
 
-  font-family: var(--font-services); /* Rubik */
+  font-family: var(--font-services);
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -555,9 +592,10 @@ section {
   transform: scale(1);
 }
 
-/* fim modais */
+/* FIM DOS MODAIS */
 
-/* ====== INICIO DA SECAO ENDEREÇO ====== */
+/* INICIO DA SECAO ENDEREÇO */
+
 .endereco{
   padding-top: 36px;
 }
@@ -576,7 +614,6 @@ section {
     0 0 0 1px rgba(255,255,255,0.04) inset;
 }
 
-/* wrapper do mapa */
 .endereco__map{
   border-radius: 16px;
   overflow: hidden;
@@ -590,7 +627,7 @@ section {
   border: 0;
 }
 
-/* ====== FIM DA SECAO ENDEREÇO ====== */
+/* ====== FIM DA SEÇAO ENDEREÇO ====== */
 
 /* ====== INICIO DA SEÇÃO HORARIO ====== */
 
@@ -627,7 +664,7 @@ section {
 }
 
 .horarios__day{
-  font-family: var(--font-card-title); /* Oswald */
+  font-family: var(--font-card-title);
   color: rgba(255,255,255,0.92);
   font-size: 1.8rem;
   margin-bottom: 8px;
@@ -635,30 +672,32 @@ section {
 }
 
 .horarios__time{
-  font-family: var(--font-services); /* Rubik */
+  font-family: var(--font-services);
   color: rgba(255,255,255,0.78);
   font-size: 1.5rem;
   margin: 0;
 }
 
-/* ====== FIM DA SEÇÃO HORARIO ====== */
+/* FIM DA SEÇÃO HORARIO */
 
-.footer {
+/* INICIO DA SEÇÃO CONTATO */
+
+.contato {
   text-align: center;
 }
 
-.footer .share {
+.contato .share {
   padding: 0.5rem 0;
 }
 
-.footer .share img {
+.contato .share img {
   margin: 0.3rem;
   cursor: pointer;
   border-radius: 25%;
   padding: 1rem;
 }
 
-.footer .share img:hover {
+.contato .share img:hover {
   background-color: #3d6cb9;
 }
 
@@ -667,3 +706,4 @@ section {
   font-size: 3.5rem;
 }
 
+/* FIM DA SEÇÃO CONTATO */
