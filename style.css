@@ -57,7 +57,7 @@ section {
 .header section {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
@@ -99,6 +99,7 @@ section {
 }
 
 .home {
+  max-width: none;
   position: relative;
   min-height: calc(100vh - 80px);
   display: flex;
@@ -106,6 +107,8 @@ section {
   justify-content: center;
   text-align: center;
   padding: 40px 16px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .home__overlay{
@@ -118,6 +121,7 @@ section {
   position: relative;
   z-index: 1;
   max-width: 900px;
+  padding: 0 16px;
 }
 
 .home__title{
@@ -374,6 +378,11 @@ section {
   );
   z-index: 2;
   pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.servicos__item:hover::after{
+  opacity: 0.4;
 }
 
 .servicos__name{
@@ -481,14 +490,14 @@ section {
 }
 
 .profissionais__name{
-  font-family: var(--font-card-title); /* Oswald */
+  font-family: var(--font-card-title);
   color: rgba(255,255,255,0.92);
   font-size: 1.9rem;
   margin-bottom: 6px;
 }
 
 .profissionais__role{
-  font-family: var(--font-card-text); /* Montserrat */
+  font-family: var(--font-card-text);
   color: rgba(255,255,255,0.75);
   font-size: 1.3rem;
   margin-bottom: 10px;
@@ -521,78 +530,6 @@ section {
   background: rgba(61,108,185,0.18);
   border-color: rgba(61,108,185,1);
 }
-
-/* inicio Modais */
-
-.info {
-  background-color: #3d6cb9;
-  height: 50px;
-  width: 80px;
-  border-radius: 20px;
-  margin-left: 6.5rem;
-  font-size: 13px;
-  color: #fff;
-}
-
-.info:hover {
-  background-color: #d72323;
-  font-size: 15px;
-}
-
-.modal {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(1.1);
-  transition: visibility 0.25s ease-in-out, opacity 0.25s ease-in-out,
-    transform 0.25s ease-in-out;
-  font-size: 15px;
-}
-
-.modal-content {
-  background-color: var(--black);
-  color: #fff;
-  padding: 24px;
-  width: 80%;
-  max-width: 500px;
-  border-radius: 8px;
-}
-
-#modalimg {
-  width: 200px;
-  height: 190px;
-}
-
-.close-button {
-  float: right;
-  width: 24px;
-  line-height: 24px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 0.25rem;
-  background-color: red;
-}
-.close-button:hover {
-  background-color: darkgray;
-}
-
-.show-modal {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-}
-
-/* FIM DOS MODAIS */
 
 /* INICIO DA SECAO ENDEREÇO */
 
@@ -707,3 +644,53 @@ section {
 }
 
 /* FIM DA SEÇÃO CONTATO */
+
+/* ===== COMEÇO DA RESPONSIVIDADE ===== */
+
+/* ====== RESPONSIVO: HOME (menos altura no mobile) ====== */
+@media (max-width: 480px){
+  .home{
+    min-height: 55vh;
+    padding: 28px 16px;
+  }
+
+  .home__title{
+    font-size: 4rem;
+  }
+
+  .home__subtitle{
+    font-size: 2.2rem;
+  }
+}
+
+/* ====== RESPONSIVO: GALERIA (mobile) ====== */
+@media (max-width: 768px){
+  .galeria__row{
+    grid-template-columns: 1fr;
+  }
+
+  .galeria__destaques{
+    margin-top: 10px;
+  }
+
+  .galeria__item--tall{
+    aspect-ratio: 3 / 4;
+  }
+}
+
+/* ====== AJUSTE: GALERIA (destaque acompanha altura do grid) ====== */
+.galeria__row{
+  align-items: stretch;
+}
+
+.galeria__destaques{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+}
+
+.galeria__item--tall{
+  flex: 1;
+  aspect-ratio: auto;
+}
