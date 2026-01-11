@@ -663,9 +663,7 @@ section {
   }
 }
 
-/* =========================
-   RESPONSIVIDADE (MOBILE)
-   ========================= */
+/* ==== RESPONSIVIDADE (MOBILE) ==== */
 
 /* Ajuste geral de títulos no mobile */
 @media (max-width: 768px){
@@ -678,21 +676,38 @@ section {
     padding: 2.2rem 1.4rem;
   }
 
-  /* Navbar: deixa quebrar bonitinho em 2 linhas (sem virar scroll chato) */
-  .header section{
-    justify-content: center;
-    gap: 8px;
+  /* =========================
+     NAVBAR (MELHORADA)
+     ========================= */
+
+  /* (corrigindo: era ".header section", aqui é o container do header/nav) */
+  .header{
+    padding: 14px 10px;
   }
 
   .navbar{
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px 14px;
+    padding: 10px 12px;
+
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .navbar a{
     font-size: 1.3rem;
-    padding: 6px 6px;
+    padding: 6px 8px;
+    opacity: 0.9;
+  }
+
+  .navbar a:hover{
+    opacity: 1;
   }
 
   /* HOME */
@@ -724,17 +739,35 @@ section {
     padding-top: 0;
   }
 
-  /* GALERIA: já tá 1 coluna, só garante que tudo respira */
+  /* =========================
+     GALERIA (MELHORADA)
+     - Destaque grande, mas mostrando mais fotos
+     ========================= */
+
+  /* vira 2 colunas no mobile pra não parecer que tem 1 foto só */
   .galeria__grid{
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
+  /* Destaque ocupa as 2 colunas, mas sem ficar gigante */
   .galeria__item--wide{
-    aspect-ratio: 1.6 / 1;
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
   }
 
+  /* Se existir item alto, também ocupa 2 colunas e controla altura */
   .galeria__item--tall{
+    grid-column: 1 / -1;
     aspect-ratio: 3 / 4;
+  }
+
+  /* garante que imagens preencham bem */
+  .galeria__item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
   }
 
   /* SERVIÇOS: vira 1 coluna e some com o divisor no meio */
@@ -783,5 +816,15 @@ section {
 
   .navbar a{
     font-size: 1.2rem;
+  }
+
+  /* Galeria: em telas MUITO pequenas volta pra 1 coluna pra não esmagar */
+  .galeria__grid{
+    grid-template-columns: 1fr;
+  }
+
+  .galeria__item--wide,
+  .galeria__item--tall{
+    grid-column: auto;
   }
 }
