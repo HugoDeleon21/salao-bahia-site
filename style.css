@@ -663,34 +663,125 @@ section {
   }
 }
 
-/* ====== RESPONSIVO: GALERIA (mobile) ====== */
+/* =========================
+   RESPONSIVIDADE (MOBILE)
+   ========================= */
+
+/* Ajuste geral de títulos no mobile */
 @media (max-width: 768px){
-  .galeria__row{
+  .title{
+    font-size: 3.2rem;
+    margin-bottom: 1.4rem;
+  }
+
+  section{
+    padding: 2.2rem 1.4rem;
+  }
+
+  /* Navbar: deixa quebrar bonitinho em 2 linhas (sem virar scroll chato) */
+  .header section{
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .navbar{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 14px;
+  }
+
+  .navbar a{
+    font-size: 1.3rem;
+    padding: 6px 6px;
+  }
+
+  /* HOME */
+  .home{
+    min-height: 70vh;
+    padding: 26px 14px;
+  }
+
+  .home__title{
+    font-size: 3.8rem;
+  }
+
+  .home__subtitle{
+    font-size: 2.0rem;
+  }
+
+  /* SOBRE: vira 1 coluna */
+  .sobre__row{
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .sobre__image{
+    margin-top: 0;
+    flex: 1;
+  }
+
+  .sobre__content{
+    padding-top: 0;
+  }
+
+  /* GALERIA: já tá 1 coluna, só garante que tudo respira */
+  .galeria__grid{
     grid-template-columns: 1fr;
   }
 
-  .galeria__destaques{
-    margin-top: 10px;
+  .galeria__item--wide{
+    aspect-ratio: 1.6 / 1;
   }
 
   .galeria__item--tall{
     aspect-ratio: 3 / 4;
   }
+
+  /* SERVIÇOS: vira 1 coluna e some com o divisor no meio */
+  .servicos__row{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .servicos__divider{
+    display: none;
+  }
+
+  .servicos__item img{
+    aspect-ratio: 4 / 5; /* “meio termo” pra fotos verticais */
+  }
+
+  /* PROFISSIONAIS: 1 coluna (ou 2 se quiser depois) */
+  .profissionais__grid{
+    grid-template-columns: 1fr;
+  }
+
+  /* MAPA */
+  .endereco__map iframe{
+    height: 260px;
+  }
+
+  /* HORÁRIOS: 1 coluna */
+  .horarios__grid{
+    grid-template-columns: 1fr;
+  }
 }
 
-/* ====== AJUSTE: GALERIA (destaque acompanha altura do grid) ====== */
-.galeria__row{
-  align-items: stretch;
-}
+/* Mobile bem pequeno */
+@media (max-width: 420px){
+  .title{
+    font-size: 2.8rem;
+  }
 
-.galeria__destaques{
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  height: 100%;
-}
+  .home__title{
+    font-size: 3.2rem;
+  }
 
-.galeria__item--tall{
-  flex: 1;
-  aspect-ratio: auto;
+  .home__subtitle{
+    font-size: 1.8rem;
+  }
+
+  .navbar a{
+    font-size: 1.2rem;
+  }
 }
