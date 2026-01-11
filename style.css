@@ -665,7 +665,6 @@ section {
 
 /* ==== RESPONSIVIDADE (MOBILE) ==== */
 
-/* Ajuste geral de títulos no mobile */
 @media (max-width: 768px){
   .title{
     font-size: 3.2rem;
@@ -676,11 +675,8 @@ section {
     padding: 2.2rem 1.4rem;
   }
 
-  /* =========================
-     NAVBAR (MELHORADA)
-     ========================= */
+  /* NAVBAR (MELHORADA) */
 
-  /* (corrigindo: era ".header section", aqui é o container do header/nav) */
   .header{
     padding: 14px 10px;
   }
@@ -739,30 +735,23 @@ section {
     padding-top: 0;
   }
 
-  /* =========================
-     GALERIA (MELHORADA)
-     - Destaque grande, mas mostrando mais fotos
-     ========================= */
+  /* GALERIA (MELHORADA) */
 
-  /* vira 2 colunas no mobile pra não parecer que tem 1 foto só */
   .galeria__grid{
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
-  /* Destaque ocupa as 2 colunas, mas sem ficar gigante */
   .galeria__item--wide{
     grid-column: 1 / -1;
     aspect-ratio: 16 / 9;
   }
 
-  /* Se existir item alto, também ocupa 2 colunas e controla altura */
   .galeria__item--tall{
     grid-column: 1 / -1;
     aspect-ratio: 3 / 4;
   }
 
-  /* garante que imagens preencham bem */
   .galeria__item img{
     width: 100%;
     height: 100%;
@@ -781,26 +770,22 @@ section {
   }
 
   .servicos__item img{
-    aspect-ratio: 4 / 5; /* “meio termo” pra fotos verticais */
+    aspect-ratio: 4 / 5; 
   }
 
-  /* PROFISSIONAIS: 1 coluna (ou 2 se quiser depois) */
   .profissionais__grid{
     grid-template-columns: 1fr;
   }
 
-  /* MAPA */
   .endereco__map iframe{
     height: 260px;
   }
 
-  /* HORÁRIOS: 1 coluna */
   .horarios__grid{
     grid-template-columns: 1fr;
   }
 }
 
-/* Mobile bem pequeno */
 @media (max-width: 420px){
   .title{
     font-size: 2.8rem;
@@ -818,7 +803,6 @@ section {
     font-size: 1.2rem;
   }
 
-  /* Galeria: em telas MUITO pequenas volta pra 1 coluna pra não esmagar */
   .galeria__grid{
     grid-template-columns: 1fr;
   }
